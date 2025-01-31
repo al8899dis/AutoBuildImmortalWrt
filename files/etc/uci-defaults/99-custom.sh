@@ -38,6 +38,7 @@ if [ "$count" -eq 1 ]; then
    uci set network.lan.proto='dhcp'
 elif [ "$count" -gt 1 ]; then
    # 多网口设备 支持修改为别的ip地址
+   uci set network.wan.proto='dhcp'
    uci set network.lan.ipaddr='192.168.50.30'
    echo "set 192.168.50.30 at $(date)" >> $LOGFILE
    # 判断是否启用 PPPoE
